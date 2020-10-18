@@ -1,0 +1,28 @@
+<app-titulo [pTitulo]="title"></app-titulo>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Motorista</th>
+      <th scope="col">Veículo</th>
+      <th scope="col">Dt.Agenda</th>
+      <th scope="col">Hr.Agenda</th>
+      <th scope="col">Dt.Chegada</th>
+      <th scope="col">Hr.Chegada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let agenda of agendas">
+      <th scope="row">{{agenda.codAgenda}}</th>
+      <td>{{agenda.codCliente}}</td>
+      <td>{{agenda.codMotorista}}</td>
+      <td>{{agenda.codVeiculo}}</td>
+      <td>{{agenda.dtAgenda}}</td>
+      <td>{{agenda.hrAgenda}}</td>
+      <td>{{agenda.dtChegada}}</td>
+      <td>{{agenda.hrChegada}}</td>
+    </tr>
+  </tbody>
+</table>

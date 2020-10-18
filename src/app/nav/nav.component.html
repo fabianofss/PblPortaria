@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/dashboard" routerLinkActive="activebutton">P.B.Lopes Portaria</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown" dropdown>
+        <a class="nav-link dropdown-toggle" id="button-basic" dropdownToggle  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Clientes
+        </a>
+        <div class="dropdown-menu" *dropdownMenu aria-labelledby="button-basic">
+          <a class="nav-link" routerLink="/entradacliente" routerLinkActive="activebutton" style="cursor: pointer;">Entrada</a>
+          <a class="nav-link" routerLink="/saidacliente" routerLinkActive="activebutton" style="cursor: pointer;">Saída</a>
+          <a class="nav-link" routerLink="/agendas" routerLinkActive="activebutton" style="cursor: pointer;">Agendas</a>
+          <a class="nav-link" routerLink="/clientes" routerLinkActive="activebutton" style="cursor: pointer;">Clientes</a>
+          <a class="nav-link" routerLink="/motoristas" routerLinkActive="activebutton" style="cursor: pointer;">Motoristas</a>
+          <a class="nav-link" routerLink="/veiculos" routerLinkActive="activebutton" style="cursor: pointer;">Veiculos</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown" dropdown>
+        <a class="nav-link dropdown-toggle" id="button-basic" dropdownToggle  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Frota
+        </a>
+        <div class="dropdown-menu" *dropdownMenu aria-labelledby="button-basic">
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

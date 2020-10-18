@@ -1,0 +1,18 @@
+<app-titulo [pTitulo]="title"></app-titulo>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Placa</th>
+      <th scope="col">Chassi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let veiculo of veiculos">
+      <th scope="row">{{veiculo.codVeiculo}}</th>
+      <td>{{veiculo.placa}}</td>
+      <td>{{veiculo.chassi}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+<app-titulo [pTitulo]="title"></app-titulo>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cliente</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <th scope="row">{{cliente.codCliente}}</th>
+      <td>{{cliente.nome}}</td>
+    </tr>
+  </tbody>
+</table>
