@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,9 +15,10 @@ import { AgendasComponent } from './agendas/agendas.component';
 import { EntradaClienteComponent } from './entrada-cliente/entrada-cliente.component';
 import { SaidaClienteComponent } from './saida-cliente/saida-cliente.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     NavComponent,
     TituloComponent,
@@ -26,13 +28,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AgendasComponent,
     EntradaClienteComponent,
     SaidaClienteComponent,
-      DashboardComponent
+    DashboardComponent,
+      LoginComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

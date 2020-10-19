@@ -1,28 +1,64 @@
 <app-titulo [pTitulo]="title"></app-titulo>
 
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Cliente</th>
-      <th scope="col">Motorista</th>
-      <th scope="col">Veículo</th>
-      <th scope="col">Dt.Agenda</th>
-      <th scope="col">Hr.Agenda</th>
-      <th scope="col">Dt.Chegada</th>
-      <th scope="col">Hr.Chegada</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let agenda of agendas">
-      <th scope="row">{{agenda.codAgenda}}</th>
-      <td>{{agenda.codCliente}}</td>
-      <td>{{agenda.codMotorista}}</td>
-      <td>{{agenda.codVeiculo}}</td>
-      <td>{{agenda.dtAgenda}}</td>
-      <td>{{agenda.hrAgenda}}</td>
-      <td>{{agenda.dtChegada}}</td>
-      <td>{{agenda.hrChegada}}</td>
-    </tr>
-  </tbody>
-</table>
+<div>
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Motorista</th>
+        <th scope="col">Veículo</th>
+        <th scope="col">Dt.Agenda</th>
+        <th scope="col">Hr.Agenda</th>
+        <th scope="col">Dt.Chegada</th>
+        <th scope="col">Hr.Chegada</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let agenda of agendas" style="cursor: pointer;" (click)="agendaSelected(agenda)">
+        <th scope="row">{{agenda.codAgenda}}</th>
+        <td>{{agenda.codCliente}}</td>
+        <td>{{agenda.codMotorista}}</td>
+        <td>{{agenda.codVeiculo}}</td>
+        <td>{{agenda.dtAgenda}}</td>
+        <td>{{agenda.hrAgenda}}</td>
+        <td>{{agenda.dtChegada}}</td>
+        <td>{{agenda.hrChegada}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="agendaSelecionada">
+  Agenda selecionada: {{agendaSelecionada.codAgenda}}
+  <form>
+    <div class="form-group">
+      <label for="inputCodAgenda">Agenda</label>
+      <input type="text" class="form-control" id="inputCodAgenda" aria-describedby="Código da agenda" value="{{agendaSelecionada.codAgenda}}">
+    </div>
+    <div class="form-group">
+      <label for="inputCodCliente">Cliente</label>
+      <input type="text" class="form-control" id="inputCodCliente" aria-describedby="Código do cliente" value="{{agendaSelecionada.codCliente}}">
+    </div>
+    <div class="form-group">
+      <label for="inputCodMotorista">Motorista</label>
+      <input type="text" class="form-control" id="inputCodMotorista" aria-describedby="Código do motorista" value="{{agendaSelecionada.codMotorista}}">
+    </div>
+    <div class="form-group">
+      <label for="inputCodVeiculo">Veículo</label>
+      <input type="text" class="form-control" id="inputCodVeiculo" aria-describedby="Código do veículo" value="{{agendaSelecionada.codVeiculo}}">
+    </div>
+    <div class="form-group">
+      <label for="inputDtAgenda">Dt.Agenda</label>
+      <input type="text" class="form-control" id="inputDtAgenda" aria-describedby="Data da agenda" value="{{agendaSelecionada.dtAgenda}}">
+    </div>
+    <div class="form-group">
+      <label for="inputHrAgenda">Hr.Agenda</label>
+      <input type="text" class="form-control" id="inputHrAgenda" aria-describedby="Hora da agenda" value="{{agendaSelecionada.hrAgenda}}">
+    </div>
+    <div class="form-group">
+      <label for="inputDtChegada">Dt.Chegada</label>
+      <input type="text" class="form-control" id="inputDtChegada" aria-describedby="Data da chegada" value="{{agendaSelecionada.dtChegada}}">
+    </div>
+  </form>  
+  <button class="btn btn-warning" (click)="voltar()">Voltar</button>
+</div>
